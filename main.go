@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("---Starting with GIN-DOCKER-K8s--------")
+	fmt.Println("----GO-GIN-DOCKER-K8s-----")
 }

@@ -1,0 +1,35 @@
+name: go-gin-docker-k8s app ci
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  format-and-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup golang
+        uses: actions/setup-go@v2
+        with:
+          go-version: latest
+
+      - name: Install linters
+        run: |
+          go get -u golang.org/x/lint/golint
+          go get -u honnef.co/go/tools/cmd/staticcheck
+
+      - name: Format code
+        run: gofmt -s -w .
+
+      - name: Lint code
+        run: |
+          golint ./...
+          staticcheck ./...
