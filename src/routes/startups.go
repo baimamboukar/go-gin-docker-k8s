@@ -2,8 +2,7 @@ package routes
 
 import "github.com/gin-gonic/gin"
 
-func startupsGroupRouter() {
-	baseRouter := setupRoutes()
+func startupsGroupRouter(baseRouter *gin.RouterGroup) {
 	startups := baseRouter.Group("/startups")
 
 	startups.GET("/all", GetAllStartups)
