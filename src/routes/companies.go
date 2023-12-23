@@ -1,6 +1,10 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+
+	service "github.com/baimamboukar/go-gin-docker-k8s/src/services"
+)
 
 func companiesGroupRouter(baseRouter *gin.RouterGroup) {
 
@@ -14,8 +18,9 @@ func companiesGroupRouter(baseRouter *gin.RouterGroup) {
 }
 
 func GetAllCompanies(c *gin.Context) {
-	// Implement logic to get all companies
-	c.JSON(200, gin.H{"message": "Get all companies"})
+	companies := service.GetAllCompanies()
+
+	c.JSON(200, gin.H{"status": "success", "message": "Get companies success", "data": companies})
 }
 
 func GetCompanyByID(c *gin.Context) {
