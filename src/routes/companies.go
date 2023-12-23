@@ -3,6 +3,7 @@ package routes
 import "github.com/gin-gonic/gin"
 
 func companiesGroupRouter(baseRouter *gin.RouterGroup) {
+
 	companies := baseRouter.Group("/companies")
 	companies.GET("/all", GetAllCompanies)
 	companies.GET("/:id", GetCompanyByID)

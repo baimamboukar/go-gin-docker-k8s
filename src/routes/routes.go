@@ -7,4 +7,7 @@ func setupRoutes() {
 
 	versionRouter := r.Group("/api/v1")
 	startupsGroupRouter(versionRouter)
+	companiesGroupRouter(versionRouter)
+
+	r.Run(":8081")
 }
