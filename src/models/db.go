@@ -31,4 +31,5 @@ func OpenDatabaseConnection() {
 
 func AutoMigrateModels() {
 	Database.AutoMigrate(&Company{})
+	Database.AutoMigrate(&Startup{})
 }
