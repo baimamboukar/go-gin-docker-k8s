@@ -63,7 +63,7 @@ func FetchCompany(id string) (*Company, error) {
 }
 
 // Updates a company in the database
-func UpdateCompany(id string, company *Company) (*Company, error) {
+func (company *Company) UpdateCompany(id string) (*Company, error) {
 	err := Database.Model(&Company{}).Where("id = ?", id).Updates(company).Error
 	if err != nil {
 		return &Company{}, err
@@ -73,7 +73,7 @@ func UpdateCompany(id string, company *Company) (*Company, error) {
 
 // Deletes a company from the database
 func DeleteCompany(id string) error {
-	err := Database.Where("id = ?", id).Delete(&Company{}).Error
+	err := Database.Model(&Company{}).Where("id = ?", id).Delete(&Company{}).Error
 	if err != nil {
 		return err
 	}
