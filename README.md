@@ -1,11 +1,24 @@
 # Go-Gin-Docker-K8s
-[![CI/CD Workflow](https://github.com/baimamboukar/go-gin-docker-k8s/actions/workflows/main.yaml/badge.svg)](https://github.com/baimamboukar/go-gin-docker-k8s/actions/workflows/main.yaml) [![Built with Go](https://img.shields.io/badge/Built%20with-Go-1f425f.svg)](https://golang.org/)[![Go Language](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)](https://golang.org/)
+[![CI/CD Workflow](https://github.com/baimamboukar/go-gin-docker-k8s/actions/workflows/main.yaml/badge.svg)](https://github.com/baimamboukar/go-gin-docker-k8s/actions/workflows/main.yaml)
 
-A backend example written in Go and the Gin web framework for startups and tech companies.
+[![Go Language](https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white)](https://golang.org/) • [![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat&logo=postman&logoColor=white)](YOUR_POSTMAN_API_COLLECTION_URL) • [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white)](YOUR_VERCEL_DEPLOYMENT_URL) • [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat&logo=postgresql&logoColor=white)](https://www.postgresql.org/) •[![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/) • [![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat&logo=kubernetes&logoColor=white)](https://kubernetes.io/) • [![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
+
+
+
+A backend example written in Go and the Gin web framework. The project includes a Dockerfile and Kubernetes configurations for deployment.
 
 ## Overview
 
-This project serves as a simple backend example for managing startups and tech companies. It is built using the Go programming language with the Gin web framework. The application utilizes a Vercel-hosted PostgreSQL database, and Gorm is employed for managing database services. Dockerization and deployment are handled through AWS EKS, and Kubernetes configurations are provided in the `kubernetes` folder. The project includes authentication and logging middlewares.
+This project serves as a simple backend example. It is built using the **Go programming language** with the **Gin web framework**, **Dockerized** and orchestrated using **K8s**, and delpoyed to **AWS ECS**. This backend utilizes a **Vercel-hosted** **PostgreSQL** database, and **Gorm** is employed for managing database services. The project also includes a **Makefile** for running common commands, **VS Code extensions** for enhancing the development experience, and a **CI/CD workflow** for automating the development process. The **Postman API documentation** is also included.
+
+
+> [!NOTE]
+> As example application for the REST APIs, the APIs are used to managed startup and tech companies. It is somehow more original than classic TODO APIs
+
+
+
+**Note:** This project is not designed for managing small startups. Instead, it is a straightforward backend implemented in Go, Gin, Docker, and Kubernetes. Currently, the APIs are focused on retrieving and creating startup entities.
+
 
 ## Table of Contents
 
@@ -26,16 +39,26 @@ This project serves as a simple backend example for managing startups and tech c
 
 
 ### Tools and Technologies
-- Go
-- Gin
-- Gorm
-- PostgreSQL
-- Docker
-- Kubernetes
-- AWS EKS
-- Vercel
-- Postman
-- VS Code
+- **Go**
+Go language `v1.19`. Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+- **Gin**
+Gin is a web framework written in Go (Golang). It features a martini-like API with much better performance, up to 40 times faster thanks to httprouter. If you need performance and good productivity, you will love Gin.
+- **Gorm**
+The fantastic ORM library for Golang, aims to be developer friendly.
+- **PostgreSQL**
+PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
+- **Docker**
+Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
+- **Kubernetes**
+Kubernetes is an open-source container-orchestration system for automating computer application deployment, scaling, and management.
+- **AWS ECS**
+Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cookpad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability.
+- **Vercel**
+Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It enables developers to host Jamstack websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.
+- **Postman**
+Postman is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
+- **VS Code**
+Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.
 
 ## Installation
 
@@ -99,7 +122,7 @@ The API documentation is maintained using Postman. Click the button below to vie
 
 
 ### Contributing
-...
+Contributions are welcome. Feel free to open a pull request or branch from this project.
 
 ### License
 This project is licensed under the MIT License.
