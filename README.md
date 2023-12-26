@@ -32,7 +32,7 @@ This project serves as a simple backend example. It is built using the **Go prog
 11. [License](#license)
 12. [Acknowledgments](#acknowledgments)
 
-
+<!-- 
 ### Tools and Technologies
 - **Go**
 Go language `v1.19`. Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
@@ -53,7 +53,7 @@ Vercel is a cloud platform for static sites and Serverless Functions that fits p
 - **Postman**
 Postman is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
 - **VS Code**
-Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git.
+Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. -->
 
 ## Installation
 
