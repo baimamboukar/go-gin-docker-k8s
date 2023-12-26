@@ -6,19 +6,29 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/baimamboukar/go-gin-docker-k8s/src/models"
-	"github.com/baimamboukar/go-gin-docker-k8s/src/services"
 )
 
 func GetAllCompanies(c *gin.Context) {
-	companies := services.GetAllCompanies()
-
-	c.JSON(200, gin.H{"status": "success", "message": "Get companies success", "data": companies})
+	companies, err := models.FetchAllCompanies()
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"message": "Companies fetched successfully", "status": "success", "data": companies})
 }
 
 func GetCompanyByID(c *gin.Context) {
-	// Implement logic to get a company by ID
 	companyID := c.Param("id")
-	c.JSON(200, gin.H{"message": "Get company by ID", "id": companyID})
+	if companyID == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Company ID is required"})
+		return
+	}
+	company, err := models.FetchCompany(companyID)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"message": "Company fetched successfully", "status": "success", "data": company})
 }
 
 func CreateCompany(context *gin.Context) {
@@ -34,10 +44,26 @@ func CreateCompany(context *gin.Context) {
 		return
 	}
 
-	context.JSON(http.StatusCreated, gin.H{"status": "failed", "message": "Comnapy saved successfuly", "data": savedCompany})
+	context.JSON(http.StatusCreated, gin.H{"status": "success", "message": "Comnapy saved successfuly", "data": savedCompany})
 }
-
 func UpdateCompany(c *gin.Context) {
+	// Get the company ID from the URL parameter
+	companyID := c.Param("id")
+
+	// Bind the updated data from the request
+	var updatedCompany *models.Company
+	if err := c.ShouldBindJSON(&updatedCompany); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"status": "failed", "message": err.Error(), "data": nil})
+		return
+	}
+
+	updatedCompany, err := updatedCompany.UpdateCompany(companyID)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"status": "failed", "message": err.Error(), "data": nil})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"status": "success", "message": "Company updated successfully", "data": updatedCompany})
 }
 
 func DeleteCompany(c *gin.Context) {
@@ -52,6 +78,6 @@ func DeleteCompany(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
 		return
 	}
-	c.JSON(http.StatusOK, gin.H{"message": "Company deleted successfully"})
+	c.JSON(http.StatusOK, gin.H{"message": "Company deleted successfully", "status": "success", "data": nil})
 
 }
