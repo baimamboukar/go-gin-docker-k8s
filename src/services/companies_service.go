@@ -1,4 +1,4 @@
-package service
+package services
 
 import "github.com/baimamboukar/go-gin-docker-k8s/src/models"
 
