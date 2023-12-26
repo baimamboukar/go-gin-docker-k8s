@@ -17,6 +17,7 @@ type Company struct {
 }
 
 type Office struct {
+	gorm.Model
 	Country string `json:"country"`
 	Town    string `json:"town"`
 	Venue   string `json:"venue"`
@@ -28,4 +29,12 @@ type SocialMedia struct {
 	X         string `json:"x"`
 	LinkedIn  string `json:"linkedin"`
 	Instagram string `json:"instagram"`
+}
+
+func (company *Company) Save() (*Company, error) {
+	err := Database.Create(&company).Error
+	if err != nil {
+		return &Company{}, err
+	}
+	return company, nil
 }

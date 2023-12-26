@@ -24,17 +24,17 @@ func GetCompanyByID(c *gin.Context) {
 func CreateCompany(context *gin.Context) {
 	var input models.Company
 	if err := context.ShouldBindJSON(&input); err != nil {
-		context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		context.JSON(http.StatusBadRequest, gin.H{"status": "failed", "message": err.Error(), "data": nil})
 		return
 	}
-	// savedCompany, err := input.
+	savedCompany, err := input.Save()
 
-	// if err != nil {
-	// 	context.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
-	// 	return
-	// }
+	if err != nil {
+		context.JSON(http.StatusBadRequest, gin.H{"status": "failed", "message": err.Error(), "data": nil})
+		return
+	}
 
-	// context.JSON(http.StatusCreated, gin.H{"data": savedEntry})
+	context.JSON(http.StatusCreated, gin.H{"status": "failed", "message": "Comnapy saved successfuly", "data": savedCompany})
 }
 
 func UpdateCompany(c *gin.Context) {
