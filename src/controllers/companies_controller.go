@@ -38,12 +38,20 @@ func CreateCompany(context *gin.Context) {
 }
 
 func UpdateCompany(c *gin.Context) {
-	// Implement logic to update a company
-	c.JSON(200, gin.H{"message": "Update a company"})
 }
 
 func DeleteCompany(c *gin.Context) {
-	// Implement logic to delete a company by ID
+	// Implement logic to delete a company
 	companyID := c.Param("id")
-	c.JSON(200, gin.H{"message": "Delete company by ID", "id": companyID})
+	if companyID == "" {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Company ID is required"})
+		return
+	}
+	err := models.DeleteCompany(companyID)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": err.Error()})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{"message": "Company deleted successfully"})
+
 }
