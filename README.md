@@ -15,11 +15,6 @@ This project serves as a simple backend example. It is built using the **Go prog
 > [!NOTE]
 > As example application for the REST APIs, the APIs are used to managed startup and tech companies. It is somehow more original than classic TODO APIs
 
-
-
-**Note:** This project is not designed for managing small startups. Instead, it is a straightforward backend implemented in Go, Gin, Docker, and Kubernetes. Currently, the APIs are focused on retrieving and creating startup entities.
-
-
 ## Table of Contents
 
 1. [Installation](#installation)
