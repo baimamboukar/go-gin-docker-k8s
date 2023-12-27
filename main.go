@@ -13,6 +13,6 @@ func main() {
 	models.OpenDatabaseConnection()
 	models.AutoMigrateModels()
 	middlewares.RegisterMiddlewares(router)
-	router.Run(":8081")
+	router.Run(":8000")
 
 }
