@@ -1,22 +1,36 @@
-version: "3.9"
+version: "3.1"
+
 services:
-  db:
-    image: mongo
-    container_name: mongodb
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana
+  golang:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: golang
     restart: always
     ports:
-      - 27017:27017
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=baimamboukar
-      - MONGO_INITDB_ROOT_PASSWORD=loremipsum
-  db-client:
-    image: mongo-express
-    restart: always
+      - "8113:8113"
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:v2.26.0
+    volumes:
+      - ./src/prometheus:/etc/prometheus
+      - prometheus_data:/src/prometheus/data
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yaml"
+      - "--storage.tsdb.path=/prometheus"
+      - "--web.console.libraries=/usr/share/prometheus/console_libraries"
+      - "--web.console.templates=/usr/share/prometheus/consoles"
     ports:
-      - 8081:8081
-    environment:
-      - ME_CONFIG_MONGODB_ADMINUSERNAME=michael
-      - ME_CONFIG_MONGODB_ADMINPASSWORD=secret
-      - ME_CONFIG_MONGODB_URL=mongodb://baimamboukar:loremipsum@db:27017/
-    depends_on:
-      - db
+      - "9090:9090"
+    restart: always
+
+volumes:
+  grafana-storage:
+  prometheus_data:
