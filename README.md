@@ -107,15 +107,9 @@ make lint
 make test
 
 
-### VS Code Extensions
-To enhance the development experience, consider installing the following VS Code extensions...
-
-### CI/CD Workflow
-The project has a continuous integration workflow...
 
 ### API Documentation
-The API documentation is maintained using Postman. Click the button below to view and run the API documentation in Postman.
-
+The API documentation is done using Postman.
 
 ### Contributing
 Contributions are welcome. Feel free to open a pull request or branch from this project.
