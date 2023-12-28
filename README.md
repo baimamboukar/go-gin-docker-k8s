@@ -100,14 +100,6 @@ make run
 kubectl apply -f kubernetes/
 
 
-
-### Makefile
-The Makefile includes the following commands...
-make lint
-make test
-
-
-
 ### API Documentation
 The API documentation is done using Postman.
 
