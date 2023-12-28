@@ -33,28 +33,6 @@ This project serves as a simple backend example. It is built using the **Go prog
 11. [License](#license)
 12. [Acknowledgments](#acknowledgments)
 
-<!-- 
-### Tools and Technologies
-- **Go**
-Go language `v1.19`. Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
-- **Gin**
-Gin is a web framework written in Go (Golang). It features a martini-like API with much better performance, up to 40 times faster thanks to httprouter. If you need performance and good productivity, you will love Gin.
-- **Gorm**
-The fantastic ORM library for Golang, aims to be developer friendly.
-- **PostgreSQL**
-PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
-- **Docker**
-Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers.
-- **Kubernetes**
-Kubernetes is an open-source container-orchestration system for automating computer application deployment, scaling, and management.
-- **AWS ECS**
-Amazon Elastic Container Service (Amazon ECS) is a fully managed container orchestration service. Customers such as Duolingo, Samsung, GE, and Cookpad use ECS to run their most sensitive and mission critical applications because of its security, reliability, and scalability.
-- **Vercel**
-Vercel is a cloud platform for static sites and Serverless Functions that fits perfectly with your workflow. It enables developers to host Jamstack websites and web services that deploy instantly, scale automatically, and requires no supervision, all with no configuration.
-- **Postman**
-Postman is a collaboration platform for API development. Postman's features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.
-- **VS Code**
-Visual Studio Code is a free source-code editor made by Microsoft for Windows, Linux and macOS. Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. -->
 
 ## Installation
 
