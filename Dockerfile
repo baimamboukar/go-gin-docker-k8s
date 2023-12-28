@@ -20,7 +20,7 @@ COPY . .
 RUN go build -o main .
 
 # Expose port 8113 to the outside world
-EXPOSE 8081
+EXPOSE 8113
 
 # Command to run the executable
 CMD ["./main"]
