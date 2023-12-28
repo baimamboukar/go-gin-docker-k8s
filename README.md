@@ -121,6 +121,6 @@ The API documentation is maintained using Postman. Click the button below to vie
 Contributions are welcome. Feel free to open a pull request or branch from this project.
 
 ### License
-This project is licensed under the MIT License.
+This project is licensed under the MIT LICENSE
 
 
