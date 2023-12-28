@@ -7,4 +7,4 @@ compose:
 	docker-compose up -d
 
 test:
-	hey -z 5m -q 5 -m GET -H "x-api-key:8113" http://127.0.0.1:8000/api/v1/startups/all
+	hey -z 2m -q 20 -m GET -H "x-api-key:8113" http://localhost:8113/api/v1/startups/all
