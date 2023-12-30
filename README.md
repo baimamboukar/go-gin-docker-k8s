@@ -15,7 +15,7 @@ This project serves as a simple backend example. It is built using the **Go prog
 
 > [!NOTE]
 > As example application for the REST APIs, the APIs are used to managed startup and tech companies. It is somehow more original than classic TODO APIs
-
+<!-- 
 ## Table of Contents
 
 1. [Installation](#installation)
@@ -31,7 +31,7 @@ This project serves as a simple backend example. It is built using the **Go prog
 9. [API Documentation](#api-documentation)
 10. [Contributing](#contributing)
 11. [License](#license)
-12. [Acknowledgments](#acknowledgments)
+12. [Acknowledgments](#acknowledgments) -->
 
 
 ## Installation
