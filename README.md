@@ -1,3 +1,5 @@
+
+
 # Go-Gin-Docker-K8s
 [![CI/CD Workflow](https://github.com/baimamboukar/go-gin-docker-k8s/actions/workflows/main.yaml/badge.svg)](https://github.com/baimamboukar/go-gin-docker-k8s/actions/workflows/main.yaml)
 
@@ -10,7 +12,7 @@ A backend example written in Go and the Gin web framework. The project includes 
 
 ## Overview
 
-This project serves as a simple backend example. It is built using the **Go programming language** with the **Gin web framework**, **Dockerized** and orchestrated using **K8s**, and delpoyed to **AWS ECS**. This backend utilizes a **Vercel-hosted** **PostgreSQL** database, and **Gorm** is employed for managing database services. The project also includes a **Makefile** for running common commands, **VS Code extensions** for enhancing the development experience, and a **CI/CD workflow** for automating the development process. The **Postman API documentation** is also included.
+This project serves as a simple backend example. It is built using the **Go programming language** with the **Gin web framework**, **Dockerized** and orchestrated using **K8s**, and deployed to **AWS ECS**. This backend utilizes a **Vercel-hosted** **PostgreSQL** database, and **Gorm** is employed for managing database services. The project also includes a **Makefile** for running common commands, **VS Code extensions** for enhancing the development experience, and a **CI/CD workflow** for automating the development process. The **Postman API documentation** is also included.
 
 
 > [!NOTE]
@@ -86,5 +88,3 @@ Contributions are welcome. Feel free to open a pull request or branch from this 
 
 ### License
 This project is licensed under the MIT LICENSE
-
-
